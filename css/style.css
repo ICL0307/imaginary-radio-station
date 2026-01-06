@@ -675,3 +675,192 @@ ul {
     font-size: 0.4rem;
   }
 }
+
+/* ========================================
+   Mobile-Specific Layout (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+
+  /* Header & Navigation */
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px !important;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    height: auto;
+    min-height: 70vh;
+    padding: 60px 0;
+  }
+
+  .hero-content {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* Sections */
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .section-content {
+    padding: 0 8px;
+  }
+
+  .section-content p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+
+  /* Station Grid - Single Column */
+  .station-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* DJ Section - Vertical Stack */
+  .dj-slider-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .nav-btn {
+    display: none;
+    /* Hide arrow navigation on mobile */
+  }
+
+  .dj-grid {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .dj-card {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .dj-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Cards */
+  .card {
+    margin-bottom: 16px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  /* Interactive Elements - Disable Hover, Enable Tap */
+  .interactive-dj:hover .hover-indicator {
+    opacity: 0;
+    /* Disable hover indicator on mobile */
+  }
+
+  .hover-indicator {
+    display: none;
+    /* Hide "VIEW FULL" indicator on mobile */
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 32px 0;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+
+  /* Back to Top Button - Already has mobile styles */
+
+  /* Modal */
+  .modal-content {
+    max-width: 95%;
+    max-height: 80%;
+  }
+
+  .close-modal {
+    top: -30px;
+    font-size: 28px;
+  }
+
+  /* Spacing Adjustments */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Text Readability */
+  body {
+    font-size: 15px;
+  }
+
+  /* Hero Background Layer - Reduce opacity on mobile for better text visibility */
+  .hero-bg-layer {
+    opacity: 0.25;
+  }
+}
