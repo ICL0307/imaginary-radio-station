@@ -245,6 +245,11 @@ ul {
   transform: translateX(-50%);
 }
 
+#djs .section-title {
+  margin-bottom: 25px;
+  /* Tight, but enough space */
+}
+
 .section-title::before {
   content: '//';
   color: var(--accent-magenta);
@@ -272,9 +277,10 @@ ul {
   overflow-x: auto;
   /* 横スクロール有効 */
   gap: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  /* スクロールバー分の余白 */
-  /* スクロールバー非表示 */
+  padding: 15px 0;
+  /* Add top and bottom padding for hover effects */
+  margin: -15px 0;
+  /* Offset padding exactly to maintain original layout */
   scrollbar-width: none;
   /* Firefox */
   -ms-overflow-style: none;
@@ -291,6 +297,9 @@ ul {
   align-items: center;
   position: relative;
   gap: var(--spacing-sm);
+  padding: 0;
+  overflow: visible;
+  /* Ensure nothing here clips the grid's padding area */
 }
 
 .nav-btn {
@@ -351,7 +360,8 @@ ul {
 
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--border-radius);
-  overflow: hidden;
+  overflow: visible;
+  /* Ensure hover effects/movement aren't clipped */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -449,6 +459,27 @@ ul {
   background: #000;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.disclaimer {
+  margin-top: var(--spacing-md);
+  /* Reduced from LG to fix widening issue */
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.disclaimer p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-disclaimer {
+  font-size: 0.7rem;
+  color: rgba(136, 136, 153, 0.5);
+  /* text-muted with lower opacity */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-sm);
 }
 
 .social-links {
@@ -779,7 +810,8 @@ ul {
     flex-direction: column;
     overflow-x: visible;
     gap: 24px;
-    padding: 0;
+    padding: 15px 0;
+    margin: -15px 0;
   }
 
   .dj-card {
