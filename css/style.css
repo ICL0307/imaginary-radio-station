@@ -28,6 +28,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-base);
   background-color: var(--bg-color);
@@ -115,6 +119,22 @@ ul {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-link:hover {
+  opacity: 1;
+  /* Override global a:hover */
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.4));
 }
 
 .logo-text {

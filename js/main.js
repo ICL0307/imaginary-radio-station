@@ -131,5 +131,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
         heroBg.style.backgroundImage = `url('${randomBg}')`;
     }
+
+    // Logo Click to Top Logic
+    const logoLink = document.querySelector('.logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            // Update URL without hash if desired
+            history.pushState(null, null, window.location.pathname);
+        });
+    }
 });
 
