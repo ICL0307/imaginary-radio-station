@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>空想ラジオ局 | Imaginary Radio Station</title>
+  <meta name="description" content="ここは、夜の隙間にだけ流れる周波数。空想ラジオ局へようこそ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="noise-overlay"></div>
+  <div class="scanlines"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#" class="logo-link" aria-label="空想ラジオ局 | Imaginary Radio Station">
+          <img src="img/header_logo_v2.png" alt="" style="height: 50px; width: auto;">
+          <span class="logo-text">
+            空想ラジオ局<br>
+            <span class="logo-sub">Imaginary Radio St.</span>
+          </span>
+        </a>
+      </h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#stations">Stations</a></li>
+          <li><a href="#djs">DJs</a></li>
+          <li><a href="https://www.youtube.com/@Imaginary_Radio" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div id="hero-random-bg" class="hero-bg-layer"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="hero-title" data-text="今夜も、どこかの誰かへ。">
+            今夜も、<br />どこかの誰かへ。
+          </h2>
+          <p class="hero-subtitle">
+            眠れない夜に寄り添う、架空の周波数。<br />
+            ここは「空想ラジオ局」。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title">空想ラジオ局とは</h2>
+        <div class="section-content">
+          <p>
+            日常の喧騒から少し離れて、<br />
+            静かな夜の海に潜るような時間を。
+          </p>
+          <p>
+            <strong>「空想ラジオ局」</strong>は、<br />
+            実在しない音楽、実在しないDJ、<br />
+            そして実在しない物語をお届けする<br />
+            YouTubeチャンネルです。
+          </p>
+          <p>
+            作業用BGMとして。<br />
+            あるいは、物語の一部として。
+          </p>
+          <p>
+            あなたの生活のBGMになれたら、嬉しいです。
+          </p>
+          <div class="disclaimer">
+            <p>※ 本サイトのコンテンツ（音楽、文章、画像）はAIによって生成されたものであり、物語や人物の設定はすべてフィクションです。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stations" class="section stations-section">
+      <div class="container">
+        <h2 class="section-title">ラジオ局一覧</h2>
+        <div class="grid station-grid">
+          <!-- 追加: RADIO NOT A BUG -->
+          <article class="card station-card interactive-dj" data-full-img="img/station_radio_not_a_bug_v2.jpg">
+            <div class="card-image">
+              <img src="img/station_radio_not_a_bug_v2.jpg" alt="RADIO NOT A BUG"
+                style="width: 100%; height: 100%; object-fit: cover;">
+              <div class="hover-indicator">VIEW FULL</div>
+            </div>
+            <div class="card-content">
+              <h3>RADIO NOT A BUG</h3>
+              <p>酸性雨の夜に合う、Lo-Fi中心の放送。街のノイズに溶けるビートで作業や深夜のひとり時間に向いている。</p>
+            </div>
+          </article>
+
+          <!-- 追加: ??? (元 MIRAGE SIGNAL) -->
+          <article class="card station-card interactive-dj" data-full-img="img/hero_bg_option_2.jpg">
+            <div class="card-image">
+              <img src="img/hero_bg_option_2.jpg" alt="???" style="width: 100%; height: 100%; object-fit: cover;">
+              <div class="hover-indicator">VIEW FULL</div>
+            </div>
+            <div class="card-content">
+              <h3>???</h3>
+              <p>ネオンが滲む夜に合う、サイバーパンク寄りのエレクトロ。一定のリズムが続く、夜のドライブ向けの選曲。</p>
+            </div>
+          </article>
+
+          <!-- JavaScriptで動的に追加、または静的に配置 -->
+        </div>
+      </div>
+    </section>
+
+    <section id="djs" class="section djs-section">
+      <div class="container">
+        <h2 class="section-title">DJ 紹介</h2>
+        <div class="dj-slider-wrapper">
+          <button class="nav-btn prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="grid dj-grid">
+            <!-- DJ Noise: Clickable for full view -->
+            <article class="card dj-card interactive-dj" data-full-img="img/dj_noise_full03.png">
+              <div class="dj-avatar">
+                <img src="img/dj_noize_p.png" alt="DJ Noise"
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <div class="hover-indicator">VIEW FULL</div>
+              </div>
+              <div class="card-content">
+                <h3>DJ ノイズ</h3>
+                <p class="role">Reconstruction Engineer</p>
+                <p>ネオ・シンジュク下層の非公式通信網で、破損した音声ログや廃棄予定の回線を再構成する技術者。古いレコードと電子音を愛する選曲家。</p>
+              </div>
+            </article>
+            <article class="card dj-card interactive-dj" data-full-img="img/dj_mirage_silhouette_02.png">
+              <div class="dj-avatar">
+                <img src="img/dj_mirage_p_unknown.png" alt="DJ Mirage"
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <div class="hover-indicator">VIEW FULL</div>
+              </div>
+              <div class="card-content">
+                <h3>DJ ???</h3>
+                <p class="role">???</p>
+                <p>???</p>
+              </div>
+            </article>
+          </div>
+          <button class="nav-btn next" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="social-links">
+        <a href="https://www.youtube.com/@Imaginary_Radio" class="social-link" aria-label="YouTube" target="_blank"
+          rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.79.029 6.185.483 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+          </svg>
+          YouTube
+        </a>
+        <a href="#" class="social-link" aria-label="X (Twitter)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+          </svg>
+          X
+        </a>
+      </div>
+      <p class="footer-disclaimer">
+        AI Generated Content / Works of Fiction
+      </p>
+      <p class="copyright">
+        &copy; 2026 Imaginary Creative Lab. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+      <path d="M12 19V5M5 12l7-7 7 7" style="opacity: 0.5; transform: translateY(5px);" />
+    </svg>
+    <span class="btn-text">TOP</span>
+  </button>
+
+  <div id="full-image-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modal-img" src="" alt="Full Body View">
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
