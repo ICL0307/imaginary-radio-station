@@ -15,8 +15,30 @@
 </head>
 
 <body>
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-content">
+      <div id="boot-text-container" class="boot-text-container">
+        <!-- JSで1行ずつ追加されます -->
+      </div>
+      <div class="boot-progress-bar">
+        <div class="boot-progress-inner"></div>
+      </div>
+    </div>
+  </div>
+  <div id="mouse-glow" class="mouse-glow"></div>
   <div class="noise-overlay"></div>
   <div class="scanlines"></div>
+  <div class="crt-overlay"></div>
+  <div class="vignette"></div>
+  <div id="global-glitch" class="global-glitch"></div>
+
+  <!-- SVG Filter for Text Noise Effect -->
+  <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true" focusable="false">
+    <filter id="text-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
+    </filter>
+  </svg>
 
   <header class="site-header">
     <div class="container">
@@ -29,15 +51,20 @@
           </span>
         </a>
       </h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#stations">Stations</a></li>
-          <li><a href="#djs">DJs</a></li>
-          <li><a href="https://www.youtube.com/@Imaginary_Radio_St" target="_blank" rel="noopener noreferrer">YouTube</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="header-right">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#about"><span data-text="About">About</span></a></li>
+            <li><a href="#worldview"><span data-text="Worlds">Worlds</span></a></li>
+            <li><a href="#stations"><span data-text="Stations">Stations</span></a></li>
+            <li><a href="#djs"><span data-text="DJs">DJs</span></a></li>
+            <li><a href="#production"><span data-text="Production">Production</span></a></li>
+            <li><a href="https://www.youtube.com/@Imaginary_Radio_St" target="_blank" rel="noopener noreferrer"><span
+                  data-text="YouTube">YouTube</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -81,6 +108,63 @@
           <div class="disclaimer">
             <p>※このチャンネルはAIを制作ツールの一部として使用していますが企画・編集・文章・最終判断はすべて手動で行っています。登場する物語・人物・世界観はすべてフィクションです。</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="worldview" class="section worldview-section">
+      <div class="container">
+        <h2 class="section-title">世界観紹介</h2>
+        <div class="worldview-slider-wrapper">
+          <button class="nav-btn worldview-prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="grid worldview-grid">
+            <!-- Cyber City -->
+            <article class="card worldview-card interactive-dj" data-full-img="img/dummy_001.jpeg">
+              <div class="card-image">
+                <img src="img/dummy_001.jpeg" alt="Cyber City" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="hover-indicator">VIEW FULL</div>
+              </div>
+              <div class="card-content">
+                <h3>Cyber City</h3>
+                <p>酸性雨が降り注ぐ、24時間ネオンが消えない街。</p>
+              </div>
+            </article>
+
+            <!-- Steam Valley -->
+            <article class="card worldview-card interactive-dj" data-full-img="img/dummy_002.png">
+              <div class="card-image">
+                <img src="img/dummy_002.png" alt="???" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="hover-indicator">VIEW FULL</div>
+              </div>
+              <div class="card-content">
+                <h3>???</h3>
+                <p>???</p>
+              </div>
+            </article>
+
+            <!-- 妖の都 -->
+            <article class="card worldview-card interactive-dj" data-full-img="img/dummy_003.png">
+              <div class="card-image">
+                <img src="img/dummy_003.png" alt="???" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="hover-indicator">VIEW FULL</div>
+              </div>
+              <div class="card-content">
+                <h3>???</h3>
+                <p>???</p>
+              </div>
+            </article>
+          </div>
+          <button class="nav-btn worldview-next" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -140,7 +224,7 @@
               <div class="card-content">
                 <h3>DJ ノイズ</h3>
                 <p class="role">Reconstruction Engineer</p>
-                <p>ネオ・シンジュク下層で、壊れた音声データや捨てられた通信回線を修復する技術者。古いレコードと電子音が好き。</p>
+                <p>サイバーシティで、壊れた音声データや捨てられた通信回線を修復する技術者。古いレコードと電子音が好き。</p>
               </div>
             </article>
             <article class="card dj-card interactive-dj" data-full-img="img/dj_mirage_silhouette_02.png">
@@ -165,6 +249,147 @@
         </div>
       </div>
     </section>
+    <section id="production" class="section production-section">
+      <div class="container">
+        <h2 class="section-title">制作環境</h2>
+        <div class="section-content">
+          <div class="grid production-grid">
+            <!-- VIDEO -->
+            <article class="production-card">
+              <h3>VIDEO</h3>
+              <ul>
+                <li><span>DaVinci Resolve</span></li>
+              </ul>
+            </article>
+            <!-- IMAGE -->
+            <article class="production-card">
+              <h3>IMAGE</h3>
+              <ul>
+                <li><span>Affinity</span></li>
+                <li><span>Nano Banana (Flow)</span> <span class="ai-badge">★AI</span></li>
+                <li><span>ChatGPT</span> <span class="ai-badge">★AI</span></li>
+              </ul>
+            </article>
+            <!-- AUDIO -->
+            <article class="production-card">
+              <h3>AUDIO</h3>
+              <ul>
+                <li><span>Suno</span> <span class="ai-badge">★AI</span></li>
+                <li><span>Google AI Studio</span> <span class="ai-badge">★AI</span></li>
+                <li><span>Voicemod</span></li>
+              </ul>
+            </article>
+            <!-- WEB -->
+            <article class="production-card">
+              <h3>WEB</h3>
+              <ul>
+                <li><span>Antigravity</span> <span class="ai-badge">★AI</span></li>
+                <li><span>Claude</span> <span class="ai-badge">★AI</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bbs" class="section bbs-section">
+      <div class="container">
+        <h2 class="section-title">LISTENER LOGS</h2>
+        <div class="bbs-intro">
+          <p class="bbs-last-update">最終更新：2026.03.02</p>
+          <p class="bbs-warning">※ このログは架空のものです。日本時間に合わせて4時間ごとに内容が変化します。</p>
+        </div>
+        <div class="bbs-container">
+          <div class="bbs-header">
+            <span class="bbs-stats">TOTAL LOGS: 4410</span>
+            <span class="bbs-status">STATUS: ONLINE</span>
+          </div>
+          <div id="bbs-content" class="bbs-content">
+            <div class="bbs-post">
+              <div class="post-meta">
+                <span class="post-no">No.4401</span>
+                <span class="post-name">眠れない</span>
+                <span class="post-time">02:19</span>
+              </div>
+              <div class="post-body">羊って何匹くらいで眠れるの</div>
+            </div>
+            <div class="bbs-post is-reply">
+              <div class="post-meta">
+                <span class="post-no">No.4402</span>
+                <span class="post-name">試した人</span>
+                <span class="post-time">02:21</span>
+              </div>
+              <div class="post-body">&gt; ↑427匹で眠れた　でも覚えてた</div>
+            </div>
+            <div class="bbs-post">
+              <div class="post-meta">
+                <span class="post-no">No.4403</span>
+                <span class="post-name">夜型人間</span>
+                <span class="post-time">02:38</span>
+              </div>
+              <div class="post-body">朝型になろうとして3年経った</div>
+            </div>
+            <div class="bbs-post is-reply">
+              <div class="post-meta">
+                <span class="post-no">No.4404</span>
+                <span class="post-name">同志</span>
+                <span class="post-time">02:39</span>
+              </div>
+              <div class="post-body">&gt; ↑俺は5年　そろそろ夜型を極めようと思う</div>
+            </div>
+            <div class="bbs-post">
+              <div class="post-meta">
+                <span class="post-no">No.4405</span>
+                <span class="post-name">哲学</span>
+                <span class="post-time">02:44</span>
+              </div>
+              <div class="post-body">「今日」って何時までだと思う？</div>
+            </div>
+            <div class="bbs-post is-reply">
+              <div class="post-meta">
+                <span class="post-no">No.4406</span>
+                <span class="post-name">現実主義</span>
+                <span class="post-time">02:44</span>
+              </div>
+              <div class="post-body">&gt; ↑寝るまで</div>
+            </div>
+            <div class="bbs-post is-reply">
+              <div class="post-meta">
+                <span class="post-no">No.4407</span>
+                <span class="post-name">楽観主義</span>
+                <span class="post-time">02:45</span>
+              </div>
+              <div class="post-body">&gt; ↑じゃあ俺まだ昨日だ</div>
+            </div>
+            <div class="bbs-post">
+              <div class="post-meta">
+                <span class="post-no">No.4408</span>
+                <span class="post-name">社会人</span>
+                <span class="post-time">02:58</span>
+              </div>
+              <div class="post-body">明日の会議の資料、夢の中で完成させた<br>採用されないのが不満</div>
+            </div>
+            <div class="bbs-post">
+              <div class="post-meta">
+                <span class="post-no">No.4409</span>
+                <span class="post-name">名無し</span>
+                <span class="post-time">03:11</span>
+              </div>
+              <div class="post-body">おやすみ</div>
+            </div>
+            <div class="bbs-post is-reply">
+              <div class="post-meta">
+                <span class="post-no">No.4410</span>
+                <span class="post-name">別の名無し</span>
+                <span class="post-time">03:24</span>
+              </div>
+              <div class="post-body">&gt; ↑おはよう</div>
+            </div>
+          </div>
+          <div class="bbs-footer">
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -178,19 +403,12 @@
           </svg>
           YouTube
         </a>
-        <a href="#" class="social-link" aria-label="X (Twitter)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-          </svg>
-          X
-        </a>
       </div>
       <p class="footer-disclaimer">
         AI Generated Content / Works of Fiction
       </p>
       <p class="copyright">
-        &copy; 2026 Imaginary Creative Lab. All rights reserved.
+        &copy; 2026 空想ラジオ局 / Imaginary Radio St. All rights reserved.
       </p>
     </div>
   </footer>
@@ -210,6 +428,11 @@
       <img id="modal-img" src="" alt="Full Body View">
     </div>
   </div>
+
+  <div id="visualizer" class="visualizer-container">
+    <!-- Bars will be generated by JS -->
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 

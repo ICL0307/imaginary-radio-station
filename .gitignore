@@ -1,0 +1,15 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Backups
+backup/
+img/trash/
+
+# IDE files
+.vscode/
+.idea/
+
+# Local build/cache
+node_modules/
+.npm/
